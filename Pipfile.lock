@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3590c4388bdb6f1d65b45954992428b82b736cc5f26b27365938ba691b9929a2"
+            "sha256": "310b2e7e7cbf550e9fccd0becaaeaa9e97bdefbbee294d98b2f111cf96188032"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -179,6 +179,20 @@
                 "sha256:f1d25edafde516b146ecd0613dabcc61409817af4766fbbcfb8d1ad4ec441a34"
             ],
             "version": "==3.10.0.2"
+        },
+        "wolframalpha-asyncio": {
+            "hashes": [
+                "sha256:c5fb80321c573a7df46aaf14b7cc076d38ba0b52b3decbddeda8848759c41274"
+            ],
+            "index": "pypi",
+            "version": "==4.0.1"
+        },
+        "xmltodict": {
+            "hashes": [
+                "sha256:50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21",
+                "sha256:8bbcb45cc982f48b2ca8fe7e7827c5d792f217ecf1792626f808bf41c3b86051"
+            ],
+            "version": "==0.12.0"
         },
         "yarl": {
             "hashes": [

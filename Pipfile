@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 hikari = "*"
 hikari-lightbulb = "*"
+wolframalpha-asyncio = "*"
 
 [dev-packages]
 

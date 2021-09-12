@@ -1,6 +1,6 @@
 # elderberry
 
-A custom Discord bot intended to carry on the functionality of [lolbot](https://github.com/lolbot-project/lolbot) at a smaller scale. It uses the [hikari](https://hikari-py.github.io) library to do so.
+A custom Discord bot intended to carry on the functionality of [lolbot](https://github.com/lolbot-project/lolbot) at a smaller scale. It uses the [hikari](https://hikari-py.github.io) library (with the help of [lightbulb](https://github.com/tandemdude/hikari-lightbulb)) to do so.
 
 # Motivation
 

@@ -1,15 +1,12 @@
 from lightbulb import Plugin, command, owner_only
-from logging import getLogger
+import lightbulb
 
 class Core(Plugin):
-    def __init__(self):
-        self.log = getLogger('hikari.bot')
-        super().__init__()
 
     @command()
     async def ping(self, ctx):
         """Check if I am alive at this present moment"""
-        return await ctx.respond('yo dipshit')
+        return await ctx.respond('the')
 
     @owner_only()
     @command()
@@ -17,9 +14,7 @@ class Core(Plugin):
         """Quick reload command for debugging purposes"""
         for plugin in plugins:
             try:
-                plugin = f'plugins.{plugin}'
-                ctx.bot.unload_extension(plugin)
-                ctx.bot.load_extension(plugin)
+                ctx.bot.reload_extension(plugin)
             finally:
                 return await ctx.respond(f':white_check_mark: Reloaded plugin {plugin} successfully.')
 
@@ -29,7 +24,6 @@ class Core(Plugin):
         """Quick load command for debugging purposes"""
         for plugin in plugins:
             try:
-                plugin = f'plugins.{plugin}'
                 ctx.bot.load_extension(plugin)
             finally:
                 return await ctx.respond(f':white_check_mark: Loaded plugin {plugin} successfully.')
@@ -40,10 +34,19 @@ class Core(Plugin):
         """Quick unload command for debugging purposes"""
         for plugin in plugins:
             try:
-                plugin = f'plugins.{plugin}'
                 ctx.bot.unload_extension(plugin)
             finally:
                 return await ctx.respond(f':white_check_mark: Unloaded plugin {plugin} successfully.')
 
+    @owner_only()
+    @command()
+    async def shutdown(self, ctx):
+        """Shut down the bot"""
+        await ctx.message.add_reaction("👋")
+        return await ctx.bot.close()
+
 def load(bot):
     bot.add_plugin(Core())
+
+def unload(bot):
+    bot.remove_plugin("Core")
