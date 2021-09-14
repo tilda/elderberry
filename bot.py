@@ -11,8 +11,6 @@ if __name__ == '__main__':
         if plugin.endswith('.py'):
             plugin = f"plugins.{plugin.replace('.py', '')}"
             bot.load_extension(plugin)
-    # bot.load_extension('filament.exts.superuser')
-    # Unfortunately filament seems to be broken on the latest hikari/lightbulb,
-    # so the convenience commands will have to wait for now
+    bot.load_extension('plugins.filament.superuser')
 
 bot.run(activity=Activity(name=f'(try {config["prefix"]}help)', type=3))
